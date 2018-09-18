@@ -4,9 +4,10 @@ const keys = require('./config/keys');
 require('./model/User');
 require('./services/passport');
 
+mongoose.connect(keys.mongoURI);
 const authRoutes = require('./routes/authRoutes');
 
-mongoose.connect(keys.mongoURI);
+
 
 const app = express();
 authRoutes(app);
