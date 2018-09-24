@@ -1,7 +1,7 @@
 //commit to server
 module.exports = {
     googleClientID: process.env.GOOGLE_CLIENT_ID,
-    googleClientSecret: proces.env.GOOGLE_CLIENT_SECRET,
+    googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
     mongoURI: process.env.MONGO_URI,
     cookieKey: process.env.COOKIE_KEY 
 }
