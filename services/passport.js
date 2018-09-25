@@ -7,10 +7,10 @@ const User = mongoose.model('users');
 
 passport.serializeUser((user, done) => {
     console.log("serializeUser:",user);
-    done(null, user.id);
+    done(null, user);
 });
 passport.deserializeUser((id, done) => {
-    User.findById(id).then(user => {
+    User.find(id).then(user => {
         done(null, user);
     });
 });
