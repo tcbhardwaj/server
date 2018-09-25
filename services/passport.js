@@ -30,7 +30,10 @@ passport.use(new GoogleStrategy(
                done(null, existingUser); 
             } else {
                 //user does not exist
-                new User({googleId: profile.id})
+                new User({
+                    googleId: profile.id,
+                    displayName: profile.displayName
+                })
                 .save()
                 .then(user => done(null, user));
             }
