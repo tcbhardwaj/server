@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hi! there
+        <a href="\auth\google">Login With Google+</a>
       </div>
     );
   }
