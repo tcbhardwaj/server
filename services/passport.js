@@ -7,10 +7,10 @@ const User = mongoose.model('users');
 
 passport.serializeUser((user, done) => {
     console.log("serializeUser:",user);
-    done(null, user);
+    done(null, user.id);
 });
 passport.deserializeUser((id, done) => {
-    User.find(id).then(user => {
+    User.findOne(id).then(user => {
         done(null, user);
     });
 });
@@ -23,7 +23,7 @@ passport.use(new GoogleStrategy(
     },
     (accessToken, refreshToken, profile, done) => { 
         console.log("profile", profile);   
-        User.find({googleId: profile.id}).then(existingUser => {
+        User.findOne({googleId: profile.id}).then(existingUser => {
             if(existingUser) {
                 //user exist
                 console.log("existingUser:", existingUser);
