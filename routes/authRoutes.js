@@ -30,7 +30,7 @@ module.exports = (app) => {
         // Exprees will serve up production assets
         //app.use(express.static('client/build'));
         console.log("__dirname:", __dirname);
-        app.use(express.static(path.join(__dirname, 'client/build')));
+        app.use(express.static(path.join(__dirname, 'client', 'build')));
       
         // Express serve up index.html file if it doesn't recognize route        
         app.get('/*', (req, res) => {            
