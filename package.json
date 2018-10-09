@@ -13,6 +13,7 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
+  "homepage": "https://damp-scrubland-11277.herokuapp.com",
   "author": "",
   "license": "ISC",
   "dependencies": {
