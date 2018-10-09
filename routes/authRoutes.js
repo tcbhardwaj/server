@@ -32,7 +32,7 @@ module.exports = (app) => {
         app.use(express.static(path.join(__dirname, 'client/build')));
       
         // Express serve up index.html file if it doesn't recognize route        
-        app.get('*', (req, res) => {            
+        app.get('/*', (req, res) => {            
             //res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
             res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
         });
