@@ -1,4 +1,3 @@
-const express = require("express");
 const passport = require('passport');
 
 module.exports = (app) => {
@@ -23,17 +22,5 @@ module.exports = (app) => {
 
     app.get('/api/current_user', (req, res) => {
         res.send(req.user);
-    });
-
-    if (process.env.NODE_ENV === 'production') {
-        // Exprees will serve up production assets
-        app.use(express.static('client/build'));
-      
-        // Express serve up index.html file if it doesn't recognize route
-        const path = require('path');
-        app.get('*', (req, res) => {
-          res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-        });
-      }
-    
+    });        
 }
