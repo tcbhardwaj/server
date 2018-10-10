@@ -20,8 +20,8 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path="/" component={Landing} />            
-            <Route exact path="/surveys" component={ this.props.auth ? Dashboard : Landing } />
-            <Route path="/survey/new" component={ this.props.auth ? SurveyNew : Landing} />            
+            <Route exact path="/surveys" component={ !this.props.auth ? Landing : Dashboard } />
+            <Route path="/survey/new" component={ !this.props.auth ? Landing : SurveyNew} />            
           </div>
         </BrowserRouter>
       </div>
