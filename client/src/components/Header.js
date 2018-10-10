@@ -5,12 +5,13 @@ import { connect } from 'react-redux';
 class Header extends Component {
 
     renderContent() {
+        console.log("this.props:",this.props);
         switch(this.props.auth) {
             case null:
                 return;
             case false:
                 return <li><a href="/auth/google">Login With Google+</a></li>;
-            default:
+            case true:
             return (
                 <div>
                     <li>Welcome! {this.props.auth.displayName} </li>
