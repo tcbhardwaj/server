@@ -21,6 +21,8 @@ app.use (
 app.use(passport.initialize());
 app.use(passport.session());
 
+authRoutes(app);
+
 if (process.env.NODE_ENV === 'production') {
     const path = require('path');
     // Exprees will serve up production assets
@@ -33,8 +35,6 @@ if (process.env.NODE_ENV === 'production') {
       //res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
   }
-
-authRoutes(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
