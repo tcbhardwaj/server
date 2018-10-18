@@ -16,4 +16,7 @@ ReactDOM.render(
     <Provider store={store}><App /></Provider>, 
     document.getElementById('root')
 );
+console.log("Environment:", process.env.NODE_ENV);
+console.log("stripe key:", process.env.REACT_APP_STRIPE_KEY);
+
 //registerServiceWorker();
