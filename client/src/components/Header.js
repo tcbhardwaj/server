@@ -11,14 +11,13 @@ class Header extends Component {
             case null:
                 return;
             case false:
-                return <li><Payments /></li>;
+                return <li><a href="/auth/google">Login With Google+</a></li>;
             default:
                 return (
-                    <div>
-                        <li><Payments /></li>
-                        <li>Welcome! {this.props.auth.displayName} </li>
-                        <li><a href="/api/logout">Logout</a></li>
-                    </div>
+                        [
+                        <li key="1"><Payments /></li>,                        
+                        <li key="2"><a href="/api/logout">Logout! {this.props.auth.displayName}</a></li>
+                        ]
                 );
         }
     }
